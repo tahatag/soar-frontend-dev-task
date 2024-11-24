@@ -9,29 +9,29 @@ body {
 @layer base {
   :root {
     --background: 220 33% 97%; /* #F5F7FA */
-    --titles: 230 33% 31%; /* #343C6A */
+    --titles: 231 34% 31%; /* #343C6A */
     --texts: 0 0% 14%; /* #232323 */
     --primary: 0 0% 14%; /* #232323 */
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
     --secondary-texts: 219 35% 62%; /* #718EBF */
-    --secondary: 221 86% 54%; /* #396AFF */
-    --muted: 0 0% 69.4%; /* #B1B1B1 */
-    --chart-1: 221 86% 54%; /* #396AFF */
-    --chart-2: 230 33% 31%; /* #343C6A */
+    --secondary: 225 100% 61%; /* #396AFF */
+    --muted: 0 0% 69%; /* #B1B1B1 */
+    --chart-1: 225 100% 61%; /* #396AFF */
+    --chart-2: 231 34% 31%; /* #343C6A */
     --chart-3: 32 98% 56%; /* #FC7900 */
     --chart-4: 0 0% 14%; /* #232323 */
     --border: 204 48% 92%; /* #E6EFF5 */
     --input-border: 206 44% 91%; /* #DFEAF2 */
     --input-background: 220 33% 97%; /* #F5F7FA */
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 100%; /* #FFFFFF */
+    --sidebar-foreground: 240 5% 26%; /* #424242 */
+    --sidebar-primary: 240 6% 10%; /* #1A1A1A */
+    --sidebar-primary-foreground: 0 0% 98%; /* #FCFCFC */
+    --sidebar-accent: 240 5% 96%; /* #F4F4F4 */
+    --sidebar-accent-foreground: 240 6% 10%; /* #1A1A1A */
+    --sidebar-border: 220 13% 91%; /* #E9E9E9 */
+    --sidebar-ring: 217 91% 60%; /* #38BDF8 */
   }
 
   .dark {
@@ -40,24 +40,24 @@ body {
     --texts: 0 0% 90%; /* Adjusted for dark mode */
     --primary: 0 0% 14%; /* #232323 */
     --primary-foreground: 0 0% 100%; /* #FFFFFF */
-    --secondary-texts: 219 35% 62%; /* Same as light mode */
-    --secondary: 221 86% 54%; /* #396AFF */
+    --secondary-texts: 219 35% 62%; /* #718EBF */
+    --secondary: 225 100% 61%; /* #396AFF */
     --disabled: 0 0% 40%; /* Adjusted for dark mode */
-    --chart-1: 221 86% 54%; /* Same as light mode */
-    --chart-2: 230 33% 31%; /* Same as light mode */
-    --chart-3: 32 98% 56%; /* Same as light mode */
-    --chart-4: 0 0% 14%; /* Same as light mode */
+    --chart-1: 225 100% 61%; /* #396AFF */
+    --chart-2: 231 34% 31%; /* #343C6A */
+    --chart-3: 32 98% 56%; /* #FC7900 */
+    --chart-4: 0 0% 14%; /* #232323 */
     --border: 204 48% 27%; /* Adjusted for dark mode */
     --input-border: 206 44% 25%; /* Adjusted for dark mode */
     --input-background: 220 13% 18%; /* Adjusted for dark mode */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 240 6% 10%; /* #1A1A1A */
+    --sidebar-foreground: 240 5% 96%; /* #F4F4F4 */
+    --sidebar-primary: 224 76% 48%; /* #4C7FFF */
+    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF */
+    --sidebar-accent: 240 4% 16%; /* #2A2A2A */
+    --sidebar-accent-foreground: 240 5% 96%; /* #F4F4F4 */
+    --sidebar-border: 240 4% 16%; /* #2A2A2A */
+    --sidebar-ring: 217 91% 60%; /* #38BDF8 */
   }
 }
 @layer base {
