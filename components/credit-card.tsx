@@ -31,7 +31,7 @@ export const CreditCard = ({
   return (
     <div
       className={cn(
-        "min-w-[265px] w-[265px] md:w-[350px] md:min-w-[350px] h-[170px] md:h-[235px] rounded-3xl flex flex-col justify-between",
+        "min-w-[265px] w-[265px] md:w-[350px] md:min-w-[350px] h-[170px] md:h-[235px] rounded-3xl flex flex-col justify-between font-lato",
         color === "black" &&
           "bg-gradient-to-r from-[#5B5A6F] to-black text-white",
         color === "white" && "bg-white border text-text-title"

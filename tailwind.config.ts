@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lato: "var(--font-lato)",
+      },
       height: {
         header: "6.25rem",
       },
