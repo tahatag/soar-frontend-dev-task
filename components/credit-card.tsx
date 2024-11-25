@@ -15,7 +15,7 @@ interface ICreditCardProps {
   type: "mastercard";
 }
 
-const cardIcon: { [cardType: "mastercard" | string]: React.ReactNode } = {
+const cardIcon: { [cardType in "mastercard"]: React.ReactNode } = {
   mastercard: <MasterCardIcon />,
 };
 
@@ -39,9 +39,16 @@ export const CreditCard = ({
     >
       <div className="px-5 pt-4 md:p-6 pb-0 w-full flex justify-between">
         <div>
-          <p className="text-xs">Balance</p>
+          <p
+            className={cn(
+              "text-xs",
+              color === "white" && "text-text-secondary"
+            )}
+          >
+            Balance
+          </p>
           <p className="md:text-xl font-semibold">
-            ${formatNumberToThousands(balance)}
+            ${formatNumberToThousands(balance, 2)}
           </p>
         </div>
         <ChipIcon className={cn("w-[34px] h-[34px]")} />
@@ -52,7 +59,7 @@ export const CreditCard = ({
             className={cn(
               "text-xs",
               color === "black" && "text-white/70",
-              color === "white" && "text-text-title/70"
+              color === "white" && "text-text-secondary"
             )}
           >
             CARD HOLDER
@@ -64,7 +71,7 @@ export const CreditCard = ({
             className={cn(
               "text-xs",
               color === "black" && "text-white/70",
-              color === "white" && "text-text-title/70"
+              color === "white" && "text-text-secondary"
             )}
           >
             VALID THRU

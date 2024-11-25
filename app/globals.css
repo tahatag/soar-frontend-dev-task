@@ -32,6 +32,8 @@ body {
     --sidebar-accent-foreground: 240 6% 10%; /* #1A1A1A */
     --sidebar-border: 220 13% 91%; /* #E9E9E9 */
     --sidebar-ring: 217 91% 60%; /* #38BDF8 */
+    --transaction-positive: 162 63% 54%; /* #41D4A8 */
+    --transaction-negative: 0 100% 65%; /* #FF4B4A */
   }
 
   .dark {
@@ -65,6 +67,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-text;
   }
 }

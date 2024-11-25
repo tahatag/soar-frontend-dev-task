@@ -61,6 +61,8 @@ export default {
           DEFAULT: "hsl(var(--texts))",
           secondary: "hsl(var(--secondary-texts))",
           title: "hsl(var(--titles))",
+          positive: "hsl(var(--transaction-positive))",
+          negative: "hsl(var(--transaction-negative))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
