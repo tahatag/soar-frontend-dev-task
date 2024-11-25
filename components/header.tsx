@@ -9,12 +9,11 @@ import NotificationsIcon from "./icons/notifications.svg";
 import SettingsOutlinedIcon from "./icons/settings-outlined.svg";
 import SearchIcon from "./icons/search.svg";
 import MenuIcon from "./icons/menu.svg";
+import { useSidebar } from "./ui/sidebar";
 
-interface IHeaderProps {
-  openMenu: () => void;
-}
+export const Header = ({ title }: { title: string }) => {
+  const { setOpenMobile } = useSidebar();
 
-export const Header = ({ openMenu }: IHeaderProps) => {
   const handleSearch = () => {
     // handle search here
   };
@@ -23,12 +22,16 @@ export const Header = ({ openMenu }: IHeaderProps) => {
     <header className="w-full md:h-header md:border-b bg-white p-[25px] pb-5 md:px-10 md:py-5 flex flex-col gap-5">
       <div className="w-full md:h-header flex justify-between items-center gap-5">
         <div className="md:hidden w-[35px]">
-          <Button variant="ghost" className="p-0" onClick={openMenu}>
+          <Button
+            variant="ghost"
+            className="p-0"
+            onClick={() => setOpenMobile(true)}
+          >
             <MenuIcon />
           </Button>
         </div>
         <h1 className="text-[20px] md:text-[28px] text-text-title font-semibold">
-          Overview
+          {title}
         </h1>
         <div className="md:w-full justify-end flex md:gap-3 lg:gap-[30px] h-full items-center">
           <div className="relative hidden md:flex">
@@ -41,10 +44,7 @@ export const Header = ({ openMenu }: IHeaderProps) => {
               onClick={handleSearch}
             />
           </div>
-          <Button
-            variant="icon"
-            className="text-text-secondary hidden md:flex"
-          >
+          <Button variant="icon" className="text-text-secondary hidden md:flex">
             <SettingsOutlinedIcon />
           </Button>
           <Button variant="icon" className="hidden md:flex">

@@ -20,15 +20,15 @@ import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import Logo from "./icons/logo.svg";
 
-interface IAppSideBarProps {
+export const AppSidebar = ({
+  items,
+}: {
   items: {
     title: string;
     href: string;
     icon: React.ReactNode;
   }[];
-}
-
-export const AppSidebar = ({ items }: IAppSideBarProps) => {
+}) => {
   const pathname = usePathname();
   const { openMobile, setOpenMobile } = useSidebar();
 
