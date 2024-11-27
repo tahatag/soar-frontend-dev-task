@@ -16,3 +16,12 @@ export type Transaction = {
   value: number;
   date: string;
 };
+
+export type WeeklyTransactions = [number, number][];
+
+export type ExpenseStatistics = {
+  name: string;
+  label: string;
+  percentage: number;
+  fill: string;
+}[];

@@ -46,9 +46,7 @@ export default function RootLayout({
   return (
     <SidebarProvider>
       <AppSidebar items={sidebarItems} />
-      <main className="flex-1 overflow-y-auto bg-white md:bg-background">
-        {children}
-      </main>
+      <main className="flex-1 bg-white md:bg-background">{children}</main>
     </SidebarProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { CreditCard, Transaction } from "./types";
+import { CreditCard, Transaction, WeeklyTransactions } from "./types";
 
 export const dummyCards: CreditCard[] = [
   {
@@ -54,5 +54,42 @@ export const dummyTransactions: Transaction[] = [
     message: "Jemi Wilson",
     value: 5400,
     date: "21 January 2021",
+  },
+];
+
+export const dummyWeeklyTransactions: WeeklyTransactions = [
+  [300, 450],
+  [200, 200],
+  [200, 430],
+  [150, 350],
+  [450, 300],
+  [300, 120],
+  [150, 370],
+];
+
+export const dummyExpenseStatistics = [
+  {
+    name: "billexpense",
+    label: "Bill Expense",
+    percentage: 15,
+    fill: "#FC7900",
+  },
+  {
+    name: "entertainment",
+    label: "Entertainment",
+    percentage: 30,
+    fill: "#343C6A",
+  },
+  {
+    name: "investment",
+    label: "Investment",
+    percentage: 20,
+    fill: "#396AFF",
+  },
+  {
+    name: "others",
+    label: "Others",
+    percentage: 35,
+    fill: "#232323",
   },
 ];

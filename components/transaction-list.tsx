@@ -28,7 +28,7 @@ export const TransactionList = ({
     >
       {transactions.map((transaction) => (
         <div
-          className="w-full flex justify-between items-center gap-4"
+          className="w-full flex justify-between items-center gap-4 overflow-hidden"
           key={transaction.id}
         >
           <div className="flex gap-4 [&>svg]:h-[50px] md:[&>svg]:h-[55px] [&>svg]:w-[50px] md:[&>svg]:w-[55px]">

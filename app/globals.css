@@ -70,3 +70,8 @@ body {
     @apply bg-background text-text;
   }
 }
+
+.weekly-activity-tick {
+  fill: hsl(var(--secondary-texts)) !important;
+  font-size: 13px;
+}
