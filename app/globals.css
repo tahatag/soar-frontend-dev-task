@@ -76,3 +76,7 @@ body {
   fill: hsl(var(--secondary-texts)) !important;
   font-size: 13px;
 }
+
+.chart-tick-line {
+  stroke: hsl(var(--secondary-texts));
+}

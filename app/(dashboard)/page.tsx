@@ -5,9 +5,10 @@ import { ExpenseStatisticsChart } from "@/components/expense-statistics-chart";
 import { Header } from "@/components/header";
 import { TransactionList } from "@/components/transaction-list";
 import { WeeklyActivityChart } from "@/components/weekly-activity-chart";
-import { dummyExpenseStatistics, dummyTransactions } from "@/lib/dummyData";
+import { dummyBalanceHistory, dummyExpenseStatistics, dummyTransactions } from "@/lib/dummyData";
 import Link from "next/link";
 import { QuickTransfer } from "./(modules)/quick-transfer";
+import BalanceHistoryChart from "@/components/balance-history-chart";
 
 export default function Dashboard() {
   return (
@@ -110,8 +111,11 @@ export default function Dashboard() {
           </section>
           <section className="col-span-10 md:col-span-6">
             <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
-              Expense Statistics
+              Balance History
             </h3>
+            <div className="mt-5 bg-white rounded-3xl h-[223px] md:h-[276px] p-5 md:p-6">
+              <BalanceHistoryChart data={dummyBalanceHistory} />
+            </div>
           </section>
         </div>
       </div>

@@ -1,4 +1,9 @@
-import { CreditCard, Transaction, WeeklyTransactions } from "./types";
+import {
+  BalanceHistory,
+  CreditCard,
+  Transaction,
+  WeeklyTransactions,
+} from "./types";
 
 export const dummyCards: CreditCard[] = [
   {
@@ -125,4 +130,14 @@ export const dummyQuickTransferPeople = [
     name: "Workman",
     role: "Designer",
   },
+];
+
+export const dummyBalanceHistory: BalanceHistory[] = [
+  { month: "Jul", balance: 400 },
+  { month: "Aug", balance: 250 },
+  { month: "Sep", balance: 450 },
+  { month: "Oct", balance: 800 },
+  { month: "Nov", balance: 200 },
+  { month: "Dec", balance: 580 },
+  { month: "Jan", balance: 650 },
 ];

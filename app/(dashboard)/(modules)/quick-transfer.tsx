@@ -15,7 +15,7 @@ export const QuickTransfer = () => {
   };
 
   return (
-    <div>
+    <div className="h-full flex flex-col justify-center">
       <QuickTransferCarousel
         people={dummyQuickTransferPeople}
         selected={selectedPerson}

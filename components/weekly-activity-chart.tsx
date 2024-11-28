@@ -10,6 +10,7 @@ import {
 import { useMemo } from "react";
 import { WeeklyTransactions } from "@/lib/types";
 import { useIsMobile } from "@/hooks/use-mobile";
+import useLastSevenDays from "@/hooks/use-last-7-days";
 
 const chartConfig = {
   deposits: {
@@ -23,20 +24,7 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export const WeeklyActivityChart = ({ data }: { data: WeeklyTransactions }) => {
-  const lastSevenDays = useMemo(() => {
-    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    const today = new Date();
-    const last7Days: string[] = [];
-
-    Array.from({ length: 7 }).forEach((_, index) => {
-      const date = new Date(today);
-      date.setDate(today.getDate() - (7 - index - 1));
-      last7Days.push(weekdays[date.getDay()]);
-    });
-
-    return last7Days;
-  }, []);
+  const lastSevenDays = useLastSevenDays();
 
   const chartData = useMemo(() => {
     return data.map(([deposit, withdraw], index) => ({
@@ -46,7 +34,7 @@ export const WeeklyActivityChart = ({ data }: { data: WeeklyTransactions }) => {
     }));
   }, [data, lastSevenDays]);
 
-  const [isMobile, isTablet] = useIsMobile();
+  const [isTablet] = useIsMobile();
 
   return (
     <ChartContainer config={chartConfig} className="h-[226px] w-full">
@@ -55,7 +43,7 @@ export const WeeklyActivityChart = ({ data }: { data: WeeklyTransactions }) => {
         barGap={isTablet ? 5 : 12}
         margin={{
           top: 10,
-          right: isMobile ? 0 : -30,
+          right: 0,
           bottom: 0,
           left: -25,
         }}
@@ -77,7 +65,6 @@ export const WeeklyActivityChart = ({ data }: { data: WeeklyTransactions }) => {
           )}
         />
         <YAxis
-          domain={[0, 500]}
           axisLine={false}
           tickLine={false}
           tickCount={6}
