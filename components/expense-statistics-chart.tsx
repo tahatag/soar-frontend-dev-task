@@ -6,6 +6,7 @@ import {
   PieSectorDataItem,
 } from "recharts/types/polar/Pie";
 import { ExpenseStatistics } from "@/lib/types";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const renderCustomLabel = ({
   cx,
@@ -14,7 +15,8 @@ const renderCustomLabel = ({
   outerRadius,
   percent,
   label,
-}: PieLabelRenderProps & { label: string }) => {
+  isMobile,
+}: PieLabelRenderProps & { label: string; isMobile: boolean }) => {
   const RADIAN = Math.PI / 180;
   const radius = Number(outerRadius) * 0.75;
   const x = Number(cx) + radius * Math.cos(-midAngle * RADIAN);
@@ -27,11 +29,11 @@ const renderCustomLabel = ({
       fill="white"
       textAnchor="middle"
       dominantBaseline="central"
-      fontSize={16}
+      fontSize={isMobile ? 13 : 16}
       fontWeight={700}
     >
       {`${((percent ?? 0) * 100).toFixed(0)}%`}
-      <tspan x={x} dy={15} fontSize={13}>
+      <tspan x={x} dy={15} fontSize={isMobile ? 11 : 13}>
         {label}
       </tspan>
     </text>
@@ -46,6 +48,8 @@ export const ExpenseStatisticsChart = ({
   const chartConfig = Object.fromEntries(
     data.map((entry) => [entry.name, { ...entry }])
   ) satisfies ChartConfig;
+
+  const [isMobile] = useIsMobile();
 
   return (
     <ChartContainer
@@ -64,6 +68,7 @@ export const ExpenseStatisticsChart = ({
             renderCustomLabel({
               ...props,
               label: chartConfig[props.name as keyof typeof chartConfig].label,
+              isMobile,
             })
           }
           labelLine={false}

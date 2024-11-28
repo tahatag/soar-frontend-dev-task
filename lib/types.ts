@@ -25,3 +25,10 @@ export type ExpenseStatistics = {
   percentage: number;
   fill: string;
 }[];
+
+export type People = {
+  id: number;
+  image: string;
+  name: string;
+  role: string;
+}[];

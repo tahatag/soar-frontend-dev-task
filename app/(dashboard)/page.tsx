@@ -7,6 +7,7 @@ import { TransactionList } from "@/components/transaction-list";
 import { WeeklyActivityChart } from "@/components/weekly-activity-chart";
 import { dummyExpenseStatistics, dummyTransactions } from "@/lib/dummyData";
 import Link from "next/link";
+import { QuickTransfer } from "./(modules)/quick-transfer";
 
 export default function Dashboard() {
   return (
@@ -16,12 +17,12 @@ export default function Dashboard() {
         <div className="grid grid-cols-3 gap-[30px]">
           <section className="col-span-3 md:col-span-2">
             <div className="w-full flex justify-between items-center">
-              <h3 className="text-text-title text-[22px] font-semibold">
+              <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
                 My Cards
               </h3>
               <Link
                 href="/credit-cards"
-                className="text-text-title hover:text-text-secondary text-[17px] font-semibold"
+                className="text-text-title hover:text-text-secondary text-sm md:text-[17px] font-semibold"
               >
                 See All
               </Link>
@@ -48,7 +49,7 @@ export default function Dashboard() {
             </div>
           </section>
           <section className="col-span-3 md:col-span-1">
-            <h3 className="text-text-title text-[22px] font-semibold line-clamp-1">
+            <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
               Recent Transaction
             </h3>
             <div className="mt-5 flex">
@@ -58,7 +59,7 @@ export default function Dashboard() {
         </div>
         <div className="grid grid-cols-3 gap-[30px] mt-6">
           <section className="col-span-3 md:col-span-2">
-            <h3 className="text-text-title text-[22px] font-semibold">
+            <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
               Weekly Activity
             </h3>
             <div className="mt-5 bg-white flex flex-col justify-between rounded-3xl p-4 md:p-7 h-[254px] md:h-[322px]">
@@ -90,12 +91,27 @@ export default function Dashboard() {
             </div>
           </section>
           <section className="col-span-3 md:col-span-1">
-            <h3 className="text-text-title text-[22px] font-semibold line-clamp-1">
+            <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
               Expense Statistics
             </h3>
             <div className="mt-5 flex bg-white rounded-3xl  h-[254px] md:h-[322px]">
               <ExpenseStatisticsChart data={dummyExpenseStatistics} />
             </div>
+          </section>
+        </div>
+        <div className="grid grid-cols-10 gap-[30px] mt-6">
+          <section className="col-span-10 md:col-span-4">
+            <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
+              Quick Transfer
+            </h3>
+            <div className="mt-5 bg-white rounded-3xl h-[195px] md:h-[276px] p-5 md:p-6">
+              <QuickTransfer />
+            </div>
+          </section>
+          <section className="col-span-10 md:col-span-6">
+            <h3 className="text-text-title text-base md:text-[22px] font-semibold line-clamp-1">
+              Expense Statistics
+            </h3>
           </section>
         </div>
       </div>

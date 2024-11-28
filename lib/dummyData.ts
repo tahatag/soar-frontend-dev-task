@@ -93,3 +93,36 @@ export const dummyExpenseStatistics = [
     fill: "#232323",
   },
 ];
+
+export const dummyQuickTransferPeople = [
+  {
+    id: 1,
+    image: "/people1.jpg",
+    name: "Livia Bator",
+    role: "CEO",
+  },
+  {
+    id: 2,
+    image: "/people2.jpg",
+    name: "Randy Press",
+    role: "Director",
+  },
+  {
+    id: 3,
+    image: "/people3.jpg",
+    name: "Workman",
+    role: "Designer",
+  },
+  {
+    id: 4,
+    image: "/people4.jpg",
+    name: "Workman",
+    role: "Designer",
+  },
+  {
+    id: 5,
+    image: "/people5.jpg",
+    name: "Workman",
+    role: "Designer",
+  },
+];
