@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { QuickTransferCarousel } from "@/components/quick-transfer-carousel";
+import { QuickTransferCarousel } from "../components/quick-transfer-carousel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import SendIcon from "@/components/icons/send.svg";
+import SendIcon from "../components/icons/send.svg";
 
 import { dummyQuickTransferPeople } from "@/lib/dummyData";
 
@@ -15,7 +15,7 @@ export const QuickTransfer = () => {
   };
 
   return (
-    <div className="h-full flex flex-col justify-center">
+    <div className="mt-5 bg-white rounded-3xl h-[195px] md:h-[276px] p-5 md:p-6 flex flex-col justify-center">
       <QuickTransferCarousel
         people={dummyQuickTransferPeople}
         selected={selectedPerson}

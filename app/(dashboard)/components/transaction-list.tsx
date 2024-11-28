@@ -21,11 +21,7 @@ export const TransactionList = ({
   transactions: Transaction[];
 }) => {
   return (
-    <div
-      className={cn(
-        "w-full h-[214px] md:h-[235px] rounded-3xl flex flex-col justify-between bg-white p-6"
-      )}
-    >
+    <>
       {transactions.map((transaction) => (
         <div
           className="w-full flex justify-between items-center gap-4 overflow-hidden"
@@ -55,6 +51,6 @@ export const TransactionList = ({
           </p>
         </div>
       ))}
-    </div>
+    </>
   );
 };

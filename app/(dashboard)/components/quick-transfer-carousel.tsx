@@ -7,10 +7,9 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
-} from "./ui/carousel";
-
+} from "@/components/ui/carousel";
 import CarouselNextIcon from "./icons/carousel-next.svg";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { People } from "@/lib/types";
 
