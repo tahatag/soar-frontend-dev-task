@@ -8,7 +8,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { useMemo } from "react";
-import { WeeklyTransactions } from "@/lib/types";
+import { WeeklyTransaction } from "@/lib/types";
 import { useIsMobile } from "@/hooks/use-mobile";
 import useLastSevenDays from "@/hooks/use-last-7-days";
 
@@ -23,7 +23,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export const WeeklyActivityChart = ({ data }: { data: WeeklyTransactions }) => {
+export const WeeklyActivityChart = ({ data }: { data: WeeklyTransaction[] }) => {
   const lastSevenDays = useLastSevenDays();
 
   const chartData = useMemo(() => {

@@ -9,6 +9,10 @@ export type CreditCard = {
   type: "mastercard";
 };
 
+export type CreditCardsResponse = {
+  cards: CreditCard[];
+};
+
 export type Transaction = {
   id: string | number;
   type: "card" | "paypal" | "direct";
@@ -17,21 +21,37 @@ export type Transaction = {
   date: string;
 };
 
-export type WeeklyTransactions = [number, number][];
+export type RecentTransactionsReponse = {
+  transactions: Transaction[];
+};
 
-export type ExpenseStatistics = {
+export type WeeklyTransaction = [number, number];
+
+export type WeeklyTransactionsReponse = {
+  transactions: WeeklyTransaction[];
+};
+
+export type ExpenseStatistic = {
   name: string;
   label: string;
   percentage: number;
   fill: string;
-}[];
+};
 
-export type People = {
+export type ExpenseStatisticsResponse = {
+  statistics: ExpenseStatistic[];
+};
+
+export type Person = {
   id: number;
   image: string;
   name: string;
   role: string;
-}[];
+};
+
+export type QuickTransferListResponse = {
+  people: Person[];
+};
 
 export type BalanceHistory = {
   balance: number;
@@ -48,4 +68,12 @@ export type BalanceHistory = {
     | "Oct"
     | "Nov"
     | "Dec";
+};
+
+export type BalanceHistoryResponse = {
+  history: BalanceHistory[];
+};
+
+export type ApiErrorResponse = {
+  message: string;
 };

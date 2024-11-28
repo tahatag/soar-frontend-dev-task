@@ -2,7 +2,7 @@ import {
   BalanceHistory,
   CreditCard,
   Transaction,
-  WeeklyTransactions,
+  WeeklyTransaction,
 } from "./types";
 
 export const dummyCards: CreditCard[] = [
@@ -60,9 +60,30 @@ export const dummyTransactions: Transaction[] = [
     value: 5400,
     date: "21 January 2021",
   },
+  {
+    id: 4,
+    type: "paypal",
+    message: "Deposit Paypal",
+    value: -450,
+    date: "21 January 2021",
+  },
+  {
+    id: 5,
+    type: "direct",
+    message: "Jemi Wilson",
+    value: -2300,
+    date: "20 January 2021",
+  },
+  {
+    id: 6,
+    type: "card",
+    message: "Deposit from my Card",
+    value: -1050,
+    date: "17 January 2021",
+  },
 ];
 
-export const dummyWeeklyTransactions: WeeklyTransactions = [
+export const dummyWeeklyTransactions: WeeklyTransaction[] = [
   [300, 450],
   [200, 200],
   [200, 430],

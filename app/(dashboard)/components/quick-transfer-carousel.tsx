@@ -11,14 +11,14 @@ import {
 import CarouselNextIcon from "./icons/carousel-next.svg";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { People } from "@/lib/types";
+import { Person } from "@/lib/types";
 
 export const QuickTransferCarousel = ({
   people,
   selected,
   onClick,
 }: {
-  people: People;
+  people: Person[];
   selected: number | null;
   onClick: (id: number) => void;
 }) => {

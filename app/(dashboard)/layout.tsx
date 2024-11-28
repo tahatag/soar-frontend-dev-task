@@ -1,5 +1,7 @@
 "use client";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 
@@ -38,15 +40,19 @@ const sidebarItems = [
   { title: "Settings", href: "/settings", icon: <SettingsIcon /> },
 ];
 
+const queryClient = new QueryClient();
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <SidebarProvider>
-      <AppSidebar items={sidebarItems} />
-      <main className="flex-1 bg-white md:bg-background">{children}</main>
-    </SidebarProvider>
+    <QueryClientProvider client={queryClient}>
+      <SidebarProvider>
+        <AppSidebar items={sidebarItems} />
+        <main className="flex-1 bg-white md:bg-background">{children}</main>
+      </SidebarProvider>
+    </QueryClientProvider>
   );
 }

@@ -5,7 +5,7 @@ import {
   PieLabelRenderProps,
   PieSectorDataItem,
 } from "recharts/types/polar/Pie";
-import { ExpenseStatistics } from "@/lib/types";
+import { ExpenseStatistic } from "@/lib/types";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const renderCustomLabel = ({
@@ -43,7 +43,7 @@ const renderCustomLabel = ({
 export const ExpenseStatisticsChart = ({
   data,
 }: {
-  data: ExpenseStatistics;
+  data: ExpenseStatistic[];
 }) => {
   const chartConfig = Object.fromEntries(
     data.map((entry) => [entry.name, { ...entry }])
