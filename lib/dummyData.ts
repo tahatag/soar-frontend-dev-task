@@ -1,4 +1,5 @@
 import {
+  AccountData,
   BalanceHistory,
   CreditCard,
   Transaction,
@@ -162,3 +163,9 @@ export const dummyBalanceHistory: BalanceHistory[] = [
   { month: "Dec", balance: 580 },
   { month: "Jan", balance: 650 },
 ];
+
+export const dummyAccount: AccountData = {
+  name: "Taha Taghaddos",
+  username: "ttaghaddos",
+  email: "ttaghaddos@gmail.com",
+};

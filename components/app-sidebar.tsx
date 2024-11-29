@@ -37,7 +37,7 @@ export const AppSidebar = ({
       {/* Desktop Sidebar */}
       <Sidebar className="hidden md:flex">
         <SidebarHeader className="h-header justify-center items-center">
-          <Link href="/" className="flex gap-[10px] items-center">
+          <Link href="/" className="flex gap-2.5 items-center">
             <Logo className="text-primary" />
             <h1 className="text-[25px] font-extrabold text-text-title">
               Soar Task
@@ -59,7 +59,7 @@ export const AppSidebar = ({
                 >
                   <div>
                     {pathname === item.href && (
-                      <div className="w-[6px] absolute left-0 h-[60px] bg-primary rounded-tr-[10px] rounded-br-[10px]" />
+                      <div className="w-[6px] absolute left-0 h-[60px] bg-primary rounded-tr-2.5 rounded-br-2.5" />
                     )}
                     <div className="w-full px-10 h-full">
                       <Link
@@ -87,7 +87,7 @@ export const AppSidebar = ({
           <ScrollArea className="h-full w-full">
             <div className="flex flex-col space-y-4 py-4">
               <div className="px-3 py-2">
-                <Link href="/" className="w-full flex gap-[10px] items-center">
+                <Link href="/" className="w-full flex gap-2.5 items-center">
                   <Logo className="text-primary w-5" />
                   <h1 className="text-lg font-extrabold text-text-title">
                     Soar Task

@@ -74,6 +74,29 @@ export type BalanceHistoryResponse = {
   history: BalanceHistory[];
 };
 
+export type AccountData = {
+  name: string;
+  username: string;
+  email: string;
+  present_address?: string;
+  permanent_address?: string;
+  city?: string;
+  postal_code?: string;
+  country?: string;
+  profile_picture?: string;
+  dob?: Date;
+};
+
+export type AccountDataRequest = {
+  account: AccountData & {
+    password?: string;
+  };
+};
+
+export type AccountDataResponse = {
+  account: AccountData;
+};
+
 export type ApiErrorResponse = {
   message: string;
 };

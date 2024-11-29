@@ -13,7 +13,7 @@ import { toast } from "sonner";
 interface FetchDataConfig<T> {
   url: string;
   queryKey: string[];
-  options?: UseQueryOptions<T, AxiosError<ApiErrorResponse>>;
+  options?: Omit<UseQueryOptions<T, AxiosError<ApiErrorResponse>>, "queryKey">;
 }
 
 const fetchData = async <T,>(url: string): Promise<T> => {
@@ -24,18 +24,15 @@ const fetchData = async <T,>(url: string): Promise<T> => {
 const useFetchData = <T,>({ url, queryKey, options }: FetchDataConfig<T>) => {
   const queryClient = useQueryClient();
 
-  const { data, isLoading, isSuccess, isError, error, refetch, dataUpdatedAt } = useQuery<
-    T,
-    AxiosError<ApiErrorResponse>
-  >({
-    // eslint-disable-next-line @tanstack/query/exhaustive-deps
-    queryKey,
-    queryFn: () => fetchData<T>(url),
-    initialData: queryClient.getQueryData(queryKey),
-    refetchInterval: 30000, // Refetch after 5 minutes
-    retry: false,
-    ...options,
-  });
+  const { data, isLoading, isSuccess, isError, error, refetch, dataUpdatedAt } =
+    useQuery<T, AxiosError<ApiErrorResponse>>({
+      // eslint-disable-next-line @tanstack/query/exhaustive-deps
+      queryKey: queryKey,
+      queryFn: () => fetchData<T>(url),
+      initialData: queryClient.getQueryData(queryKey),
+      refetchInterval: 30000, // Refetch after 5 minutes
+      ...options,
+    });
 
   useEffect(() => {
     if (isError) {

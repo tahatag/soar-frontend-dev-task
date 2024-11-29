@@ -16,6 +16,7 @@ body {
     --secondary-texts: 219 35% 62%; /* #718EBF */
     --secondary: 225 100% 61%; /* #396AFF */
     --muted: 0 0% 69%; /* #B1B1B1 */
+    --destructive: 356 91% 56%; /* #F52936 */
     --chart-1: 225 100% 61%; /* #396AFF */
     --chart-2: 231 34% 31%; /* #343C6A */
     --chart-3: 32 98% 56%; /* #FC7900 */
@@ -35,6 +36,7 @@ body {
     --sidebar-ring: 217 91% 60%; /* #38BDF8 */
     --transaction-positive: 162 63% 54%; /* #41D4A8 */
     --transaction-negative: 0 100% 65%; /* #FF4B4A */
+    --tab-border: 220 16% 96%; /* #F4F5F7 */
   }
 
   .dark {

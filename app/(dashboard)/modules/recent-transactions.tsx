@@ -15,7 +15,7 @@ export const RecentTransactions = () => {
       {isSuccess ? (
         <TransactionList transactions={data.transactions} />
       ) : (
-        <div className="flex flex-col gap-[10px] pr-4">
+        <div className="flex flex-col gap-2.5 pr-4">
           {Array.from({ length: 3 }).map((_, index) => (
             <div
               className="w-full flex justify-between items-center gap-4 overflow-hidden"

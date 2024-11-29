@@ -28,7 +28,7 @@ export const TransactionList = ({
       className="pr-4"
       type="always"
     >
-      <div className="flex flex-col gap-[10px]">
+      <div className="flex flex-col gap-2.5">
         {transactions.map((transaction) => (
           <div
             className="w-full flex justify-between items-center gap-4 overflow-hidden"

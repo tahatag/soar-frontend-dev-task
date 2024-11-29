@@ -47,7 +47,11 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "hsl(var(--border))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          tab: "hsl(var(--tab-border))",
+          input: "hsl(var(--input-border))",
+        },
         input: {
           DEFAULT: "hsl(var(--input))",
           secondary: "hsl(var(--input-secondary))",

@@ -4,15 +4,18 @@ import Image from "next/image";
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { useSidebar } from "./ui/sidebar";
+import { useUserStore } from "@/stores/userStore";
 
 import NotificationsIcon from "./icons/notifications.svg";
 import SettingsOutlinedIcon from "./icons/settings-outlined.svg";
 import SearchIcon from "./icons/search.svg";
 import MenuIcon from "./icons/menu.svg";
-import { useSidebar } from "./ui/sidebar";
+import Link from "next/link";
 
 export const Header = ({ title }: { title: string }) => {
   const { setOpenMobile } = useSidebar();
+  const { user } = useUserStore();
 
   const handleSearch = () => {
     // handle search here
@@ -50,14 +53,21 @@ export const Header = ({ title }: { title: string }) => {
           <Button variant="icon" className="hidden md:flex">
             <NotificationsIcon />
           </Button>
-          <div className="rounded-full w-[35px] h-[35px] md:min-w-[60px] md:w-[60px] md:h-[60px] md:ml-[5px]">
+          <Link
+            href="/settings"
+            className="rounded-full w-[35px] h-[35px] md:min-w-[60px] md:w-[60px] md:h-[60px] md:ml-[5px]"
+          >
             <Image
               fill
-              src="/image1.jpg"
+              src={
+                user?.profile_picture
+                  ? user?.profile_picture
+                  : "/pfp-placeholder.png"
+              }
               alt="Profile Picture"
               className="object-cover !relative rounded-full"
             />
-          </div>
+          </Link>
         </div>
       </div>
       <div className="relative flex md:hidden">
